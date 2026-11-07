@@ -1,0 +1,28 @@
+BIBLIOTECAS DE TERCEIROS UTILIZADAS NO EDITOR DE PDF
+(todas permitem uso comercial; nenhuma exige chave de licença)
+
+Biblioteca     Licença                       Uso
+-------------  ----------------------------  -------------------------------------------
+PySide6 (Qt)   LGPL-3.0 (GPL/comercial)      Interface gráfica. Distribuído em modo
+                                             --onefile: as DLLs do Qt ficam dentro do .exe
+                                             e podem ser substituídas pelo usuário; o
+                                             código-fonte do Qt/PySide6 está em
+                                             https://code.qt.io e https://pypi.org/project/PySide6
+pypdfium2      Apache-2.0 / BSD-3-Clause     Renderização das páginas (usa o PDFium,
+               (PDFium: BSD-3 / Apache-2.0)  incluindo componentes sob licenças permissivas)
+pikepdf        MPL-2.0                       Edição da estrutura do PDF, criptografia
+               (qpdf: Apache-2.0)            (vem com a biblioteca qpdf)
+pypdf          BSD-3-Clause                  Mesclagem de camadas e formulários
+reportlab      BSD-3-Clause                  Geração de textos, desenhos e imagens
+Pillow         MIT-CMU (HPND)                Manipulação de imagens
+PyInstaller    GPL-2.0 com exceção p/        Empacotamento do .exe (ferramenta de build;
+               programas empacotados         a exceção permite distribuir o .exe sob
+                                             qualquer licença)
+Python         PSF-2.0                       Interpretador embutido no .exe
+
+NÃO são usados: PyMuPDF/fitz (AGPL), bibliotecas pagas ou com chave de licença.
+Tesseract OCR: NÃO incluído nesta versão (OCR desativado).
+
+Aviso: confira as licenças exatas das versões que você instalar (pip show <pacote>)
+antes de distribuir comercialmente; este arquivo é informativo e não é parecer jurídico.
+Os textos completos das licenças acompanham os pacotes em site-packages (arquivos LICENSE).
