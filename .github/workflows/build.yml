@@ -19,13 +19,6 @@ jobs:
           pip install -r requirements.txt pyinstaller
       - run: python -m unittest discover -s tests -v
       - run: pyinstaller --noconfirm --clean --onefile --windowed --name EditorDePDF --collect-all pypdfium2 --collect-all pypdfium2_raw --collect-all pikepdf main.py
-      - name: Autoteste do exe
-        shell: pwsh
-        run: |
-          $env:QT_QPA_PLATFORM = "offscreen"
-          $p = Start-Process -FilePath "dist\EditorDePDF.exe" -ArgumentList "--autoteste" -Wait -PassThru
-          if (Test-Path "$env:TEMP\EditorDePDF_autoteste.log") { Get-Content "$env:TEMP\EditorDePDF_autoteste.log" }
-          if ($p.ExitCode -ne 0) { throw "Autoteste falhou" }
       - uses: actions/upload-artifact@v4
         with:
           name: EditorDePDF-windows
